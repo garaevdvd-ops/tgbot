@@ -1,0 +1,15 @@
+
+  "realPrizes": [
+    {"id":1,"name":"М5 F90","image":"🚗","type":"item","weight":0},
+    {"id":2,"name":"1кк виртов","image":"💎","type":"item","weight":0},
+    {"id":3,"name":"Приз 3","image":"🎁","type":"item","weight":0},
+    {"id":4,"name":"Приз 4","image":"🎁","type":"item","weight":0},
+    {"id":5,"name":"Приз 5","image":"🎁","type":"item","weight":0}
+  ],
+  "demoPrizes": [
+    {"id":1,"name":"М5 F90","image":"🚗","type":"item","weight":10},
+    {"id":2,"name":"1кк виртов","image":"💎","type":"item","weight":15},
+    {"id":3,"name":"Приз 3","image":"🎁","type":"item","weight":20},
+    {"id":4,"name":"Приз 4","image":"🎁","type":"item","weight":25},
+    {"id":5,"name":"Приз 5","image":"🎁","type":"item","weight":30}
+  ]
