@@ -39,17 +39,34 @@
     const prizeElements = document.querySelectorAll('.prize');
     prizeElements.forEach(p => p.classList.remove('selected'));
 
-    // Случайный индекс
+    // Случайный индекс для выигрыша
     const selectedIndex = Math.floor(Math.random() * prizes.length);
-    const selectedPrize = prizeElements[selectedIndex];
-    selectedPrize.classList.add('selected');
 
-    // Прокручиваем колесо к выбранному призу
-    selectedPrize.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+    let speed = 30;       // начальная скорость прокрутки
+    const totalSteps = 60; // сколько шагов будет анимация
+    let step = 0;
 
-    setTimeout(() => {
-      alert(`Поздравляем! Вы выиграли: ${prizes[selectedIndex].name}`);
-    }, 800);
+    const interval = setInterval(() => {
+      // Прокручиваем колесо
+      wheel.scrollLeft += speed;
+
+      // Постепенно замедляем
+      speed *= 0.95;
+
+      step++;
+      if (step >= totalSteps) {
+        clearInterval(interval);
+
+        // Прокручиваем точно к выбранному призу
+        prizeElements[selectedIndex].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+        prizeElements[selectedIndex].classList.add('selected');
+
+        // Показываем сообщение о выигрыше
+        setTimeout(() => {
+          alert(`Поздравляем! Вы выиграли: ${prizes[selectedIndex].name}`);
+        }, 400);
+      }
+    }, 20); // интервал между шагами 20 мс
   };
 </script>
 

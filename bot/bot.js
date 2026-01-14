@@ -11,14 +11,14 @@ bot.onText(/\/start/, (msg) => {
   if(!users[chatId]) users[chatId] = { paid_spins:0, free_spins:0, invited:0 };
 
   bot.sendMessage(chatId, "Привет! Выбирай действие:", {
-    reply_markup: {
-      inline_keyboard: [
-        [{ text: "🎁 Испытать удачу", web_app: { url: "https://github.com/garaevdvd-ops/epic-gift-clone.git" } }],
-[{ text: "🎮 Демо", web_app: { url: "http://localhost:5500/miniapp/index.html?demo=true" } }],
-        [{ text: "👥 Пригласить друга", callback_data: "referral" }]
-      ]
-    }
-  });
+  reply_markup: {
+    inline_keyboard: [
+      [{ text: "🎁 Испытать удачу", web_app: { url: "https://garaevdvd-ops.github.io/jjjjj/miniapp/index.html?demo=true" } }],
+      [{ text: "🎮 Демо", web_app: { url: "https://garaevdvd-ops.github.io/jjjjj/miniapp/index.html?demo=true" } }],
+      [{ text: "👥 Пригласить друга", callback_data: "referral" }]
+    ]
+  }
+});
 });
 
 bot.on('callback_query', query => {
